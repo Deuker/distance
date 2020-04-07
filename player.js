@@ -2,14 +2,13 @@ class Player {
   constructor(x, y, img) {
     this.x = x;
     this.y = y;
-    this.img = loadImage("assets/dave.jpeg");
+    this.img = loadImage("assets/unten.png");
   }
 
   draw() {
     image(this.img, this.x, this.y, 100, 100);
   }
 
-  //change pictures
   moveDown() {
     this.y = this.y +10;
     this.img = loadImage("assets/unten.png");
@@ -28,5 +27,10 @@ class Player {
   moveLeft() {
     this.x = this.x -10;
     this.img = loadImage("assets/links.jpeg");
+  }
+
+  measureDistance() {
+    console.log(dist(this.x, this.y, 10,10));
+    console.log(dist);
   }
 }

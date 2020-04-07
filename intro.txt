@@ -1,0 +1,23 @@
+TO DO:
+
+Tuesday
+- Build logic for multiple enemies (understand new Value)
+- Measure distance between player and enemies
+    - dist() function
+    - measure avg distance per day
+- implement collussion logic - change player direction after collussion
+- build scoreboard 
+    - introduce timer (60 secounds = 60 days)
+-dont run out of canvas
+
+Wednesday
+- design game - research for 
+- introduce first, second, third level
+- build welcome screen, level screen, result screen
+
+Thursday
+- test game logic
+
+Bonus
+- build bigger canvas and zoom into small part of it
+- introduce second player for third level 
