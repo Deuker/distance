@@ -8,12 +8,23 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(600, 600);
+    createCanvas(800, 800);
 }
 
 function draw() {
     clear();
     game.draw();
+    game.measureDistance();
+    // if (game.start) {
+    //     game.draw();
+    // }
+    // else {
+    //     fill("green");
+    //     rect(0,0,600,600);
+    //     text('"Press enter to start"');
+
+
+    // }
     //background.draw();
     //image(playerImage, 300, 300, 50, 50);
 }
@@ -25,19 +36,19 @@ function keyPressed() {
     let downArrowCode = 40;
     if (keyCode === rightArrowCode) {
         game.player.moveRight();
-        console.log("move right");
+        //console.log("move right");
     } 
     else if (keyCode === leftArrowCode) {
         game.player.moveLeft();
-        console.log("move left");
+        //console.log("move left");
     }
     else if (keyCode === upArrowCode) {
         game.player.moveUp();
-        console.log("move up");
+        //console.log("move up");
     }
     else if (keyCode === downArrowCode) {
         game.player.moveDown();
-        console.log("move down");
+        //console.log("move down");
     }
 }
 

@@ -5,6 +5,6 @@ class Background {
         this.backgroundImage = loadImage("assets/bild.jpg");
     }
     draw() {
-        image(this.backgroundImage,0,0,600,600);
+        image(this.backgroundImage,0,0,800,800);
     }
 }
