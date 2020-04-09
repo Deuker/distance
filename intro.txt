@@ -1,5 +1,11 @@
 TO DO:
 
+KEEP THE EVERAGE DISTANCE small
+
+CHOOSE YOUR STRESS level
+
+
+
 Tuesday
 - Build logic for multiple enemies (understand new Value)
 - Measure distance between player and enemies

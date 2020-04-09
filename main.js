@@ -8,23 +8,31 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(800, 800);
+    createCanvas(600, 600);
 }
 
 function draw() {
+    
     clear();
     game.draw();
-    game.measureDistance();
-    // if (game.start) {
-    //     game.draw();
-    // }
-    // else {
-    //     fill("green");
-    //     rect(0,0,600,600);
-    //     text('"Press enter to start"');
+    //game.measureDistance();
+    
+    if (game.start === true) {
+         game.draw();
+         
+     }
+    else {
+        fill("black");
+        rect(0,0,600,600);
+        fill("white");
+        textSize(30);
+        text("Press Space Bar to start", 10, 30);
 
 
-    // }
+
+    }
+
+    
     //background.draw();
     //image(playerImage, 300, 300, 50, 50);
 }
@@ -34,6 +42,8 @@ function keyPressed() {
     let leftArrowCode = 37;
     let upArrowCode = 38;
     let downArrowCode = 40;
+    let spaceBarCode = 32;
+    let EnterCode = 13;
     if (keyCode === rightArrowCode) {
         game.player.moveRight();
         //console.log("move right");
@@ -50,5 +60,12 @@ function keyPressed() {
         game.player.moveDown();
         //console.log("move down");
     }
+    else if (keyCode === spaceBarCode) {
+        game.start = true;
+    }
+    else if (keyCode === EnterCode && game.finished===true) {
+        window.location.reload();
+    } 
+
 }
 
