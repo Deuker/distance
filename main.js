@@ -1,5 +1,7 @@
 const game = new Game();
-
+// The following two lines help to save the local Highscore
+// localStorage.setItem("gameScore", 0);
+// let score = localStorage.getItem("gameScore");
 
 function preload() {
     game.init();
@@ -12,15 +14,23 @@ function setup() {
 }
 
 function draw() {
-    
     clear();
     game.draw();
-    //game.measureDistance();
-    
+    // Here we draw the Game after enter gets pressed on the Mainscreen 
     if (game.start === true) {
-         game.draw();
-         
-     }
+        game.draw();
+        // Here we define different colors of the score
+            if (game.player.score < 2) {
+                fill("blue");
+                textSize(20);
+                text( `The score is ${game.player.score}` , 10, 30);
+                }
+            else if (game.player.score >=2 && game.player.score < 10) {
+                fill("red");
+                textSize(20);
+                text( `The score is ${game.player.score}` , 10, 30)
+        } 
+    }
     else {
         fill("black");
         rect(0,0,600,600);
@@ -31,12 +41,7 @@ function draw() {
 
 
     }
-
-    
-    //background.draw();
-    //image(playerImage, 300, 300, 50, 50);
 }
-
 function keyPressed() {
     let rightArrowCode = 39;
     let leftArrowCode = 37;
@@ -44,21 +49,18 @@ function keyPressed() {
     let downArrowCode = 40;
     let spaceBarCode = 32;
     let EnterCode = 13;
+
     if (keyCode === rightArrowCode) {
         game.player.moveRight();
-        //console.log("move right");
     } 
     else if (keyCode === leftArrowCode) {
         game.player.moveLeft();
-        //console.log("move left");
     }
     else if (keyCode === upArrowCode) {
         game.player.moveUp();
-        //console.log("move up");
     }
     else if (keyCode === downArrowCode) {
         game.player.moveDown();
-        //console.log("move down");
     }
     else if (keyCode === spaceBarCode) {
         game.start = true;

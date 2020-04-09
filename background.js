@@ -1,3 +1,5 @@
+// This is the Class where we load and define the Game Background
+
 class Background {
     constructor(x, y, backgroundImage) {
         this.x = x;
