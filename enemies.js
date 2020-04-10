@@ -11,7 +11,7 @@ class Enemy {
     this.y = this.randomStart === 0 ? random((100, 500)) : random([0, 800]);
     //Here we define the speed per Enemy
     this.speed = 1;
-    this.color = random(['#008888', '#102c54','#ac4034','ec7c25'])
+    this.color = random(['#008888', '#102c54','#ac4034','ec7c25','red','blue','yellow'])
     this.picture = loadImage("assets/oben.png");
 
     
@@ -50,33 +50,33 @@ class Enemy {
     if (this.direction == "right" && this.x < width + 0.5 * this.width) {
       this.x = this.x + this.speed;
       //image(this.picture, this.x, this.y, 50, 50);
-      //if (frameCount % 100 === 0) {
+      if (frameCount % 30 === 0) {
         console.log(this.distance = Math.pow(Math.pow(this.x-this.xPositionPlayer, 2) + Math.pow(this.y-this.yPositionPlayer,2),0.5));
         this.measureDistance();
-      //}
+      }
     } 
     else if (this.direction == "left" && this.x > 0 - 0.5 * this.width) {
       this.x = this.x - this.speed;
       //image(this.picture, this.x, this.y, 50, 50);
-      //if (frameCount % 100 === 0) {
+      if (frameCount % 30 === 0) {
         console.log(this.distance = Math.pow(Math.pow(this.x-this.xPositionPlayer, 2) + Math.pow(this.y-this.yPositionPlayer,2),0.5));
         this.measureDistance();
-      //}
+      }
     } 
     else if (this.direction == "down" && this.y < height + 0.5 * this.height) {
       this.y = this.y + this.speed;
       //image(this.picture, this.x, this.y, 50, 50);
-      //if (frameCount % 100 === 0) {
+      if (frameCount % 30 === 0) {
         console.log(this.distance = Math.pow(Math.pow(this.x-this.xPositionPlayer, 2) + Math.pow(this.y-this.yPositionPlayer,2),0.5));
         this.measureDistance();
-      //}
+      }
     } else if (this.direction == "up" && this.y > 0 - 0.5 * this.height) {
       this.y = this.y - this.speed;
       //image(this.picture, this.x, this.y, 50, 50);
-      //if (frameCount % 100 === 0) {
+      if (frameCount % 30 === 0) {
         console.log(this.distance = Math.pow(Math.pow(this.x-this.xPositionPlayer, 2) + Math.pow(this.y-this.yPositionPlayer,2),0.5));
         this.measureDistance();
-      //}
+      }
     }
   }
   // Here we measure the distance to the player and change the Score
@@ -85,12 +85,24 @@ class Enemy {
         game.finished = true; 
       } else {
       
-      if(this.distance > 600 ) {
-        game.player.score = game.player.score + 0.1;
-      } else if (this.distance < 500 && this.distance > 400) {
-        game.player.score = game.player.score - 0.1;
-      } else {
-        game.player.score = game.player.score - 0.1;
+      if(this.distance > 400 ) {
+        game.player.score = game.player.score + 0.7;
+      } else if (this.distance < 400 && this.distance > 300) {
+        game.player.score = game.player.score + 0.3;
+      } else if (this.distance < 300 && this.distance > 225) {
+        game.player.score = game.player.score + 0.1;  
+      }
+      else if (this.distance < 225 && this.distance > 175) {
+        game.player.score = game.player.score - 0.1;  
+      }
+      else if (this.distance < 175  && this.distance > 125) {
+        game.player.score = game.player.score - 0.7;  
+      }
+      else if (this.distance < 125 && this.distance > 75) {
+        game.player.score = game.player.score - 1;  
+      }
+      else {
+        game.player.score = game.player.score - 5;
       }
     }
       console.log(game.player.score)

@@ -4,7 +4,7 @@ class Background {
     constructor(x, y, backgroundImage) {
         this.x = x;
         this.y = y;
-        this.backgroundImage = loadImage("assets/timer.gif");
+        this.backgroundImage = loadImage("assets/backscreen.gif");
     }
     draw() {
         image(this.backgroundImage,0,0,800,800);

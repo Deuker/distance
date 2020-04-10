@@ -1,5 +1,17 @@
 TO DO:
 
+Distnce 
+add strt nd end screen
+check logic
+chnge color of scoreboard
+
+
+bonus. add corona note 
+
+
+
+
+
 KEEP THE EVERAGE DISTANCE small
 
 CHOOSE YOUR STRESS level
