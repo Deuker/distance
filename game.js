@@ -33,7 +33,6 @@ class Game {
         }
 
 
-
             // this.enemy.forEach((enemy)=> {
             //  enemy.move(); 
             // });
@@ -45,9 +44,10 @@ class Game {
             noLoop();
             fill("black");
             rect(0,0,800,800);
-            fill("white");
-            textSize(30);
-            text("Game Over, press Enter to restart", 10, 30);
+            //fill("white");
+            //textSize(30);
+            //text("Game Over, press Enter to restart", 10, 30);
+            image(imgEnd,-60,80)
         }   
     }
     // This should be not used so far

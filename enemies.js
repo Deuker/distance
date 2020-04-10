@@ -10,7 +10,7 @@ class Enemy {
     this.x = this.randomStart === 0 ? random([0, 800]) : random((100, 500));
     this.y = this.randomStart === 0 ? random((100, 500)) : random([0, 800]);
     //Here we define the speed per Enemy
-    this.speed = 1;
+    this.speed = random([1,1.2,0.9,0.7,1.3]);
     this.color = random(['#008888', '#102c54','#ac4034','ec7c25','red','blue','yellow'])
     this.picture = loadImage("assets/oben.png");
 
@@ -85,21 +85,21 @@ class Enemy {
         game.finished = true; 
       } else {
       
-      if(this.distance > 400 ) {
-        game.player.score = game.player.score + 0.7;
-      } else if (this.distance < 400 && this.distance > 300) {
+      if(this.distance > 500 && this.distance < 700) {
+        game.player.score = game.player.score + 0.5;
+      } else if (this.distance < 500 && this.distance > 300) {
         game.player.score = game.player.score + 0.3;
       } else if (this.distance < 300 && this.distance > 225) {
-        game.player.score = game.player.score + 0.1;  
+        game.player.score = game.player.score - 0.5;  
       }
       else if (this.distance < 225 && this.distance > 175) {
-        game.player.score = game.player.score - 0.1;  
+        game.player.score = game.player.score - 0,7.;  
       }
       else if (this.distance < 175  && this.distance > 125) {
-        game.player.score = game.player.score - 0.7;  
+        game.player.score = game.player.score - 1,2;  
       }
       else if (this.distance < 125 && this.distance > 75) {
-        game.player.score = game.player.score - 1;  
+        game.player.score = game.player.score - 1,5;  
       }
       else {
         game.player.score = game.player.score - 5;
